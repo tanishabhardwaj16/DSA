@@ -7,7 +7,7 @@ class MedianFinder {
     }
     
     public void addNum(int num) {
-        
+       
         if(maxheap.isEmpty() || num<=maxheap.peek()){
             maxheap.offer(num);
         }else{
