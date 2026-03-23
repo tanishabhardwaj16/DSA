@@ -9,10 +9,10 @@ class Solution {
                 }
                 count++;
             }else{
-                if(count>1){
+                count--;
+                if(count>0){
                     result.append(s.charAt(i));
                 }
-                count--;
             }
         }
         return result.toString();
