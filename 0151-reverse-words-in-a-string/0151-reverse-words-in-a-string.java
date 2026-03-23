@@ -11,8 +11,8 @@ class Solution {
             i++;
             j--;
         }
-        for(int word=0;word<words.length;word++){
-            result.append(words[word]).append(" ");
+        for(String word : words){
+            result.append(word).append(" ");
         }
         return result.toString().trim();
     }
