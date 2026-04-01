@@ -1,27 +1,22 @@
 class Solution {
     public List<String> letterCombinations(String digits) {
+        List<String> res=new ArrayList<>();
         if(digits.length()==0)return new ArrayList<>();
-        Map<Character,String> map=new HashMap<>();
-        map.put('2', "abc");
-        map.put('3', "def");
-        map.put('4', "ghi");
-        map.put('5', "jkl");
-        map.put('6', "mno");
-        map.put('7', "pqrs");
-        map.put('8', "tuv");
-        map.put('9', "wxyz");
-        List<String> result=new ArrayList<>();
-        result.add("");
-        for( char d : digits.toCharArray()){
-            String letters= map.get(d);
-            List<String> next=new ArrayList<>();
-            for(String s : result){
-                for(char c : letters.toCharArray()){
-                    next.add(s+c);
-                }
-            }
-            result=next;
+        String[] map={"", "", "abc", "def", "ghi",
+            "jkl", "mno", "pqrs", "tuv", "wxyz"};
+         solve(0,digits,new StringBuilder(),res,map);
+         return res;
+    }
+    public void solve(int i,String digits,StringBuilder op,List<String>res,String[] map){
+        if(i==digits.length()){
+            res.add(op.toString());
+            return;
         }
-        return result;
+        String letters=map[digits.charAt(i)-'0'];
+        for(char ch : letters.toCharArray()){
+            op.append(ch);
+            solve(i+1,digits,op,res,map);
+            op.deleteCharAt(op.length()-1);
+        }
     }
 }
