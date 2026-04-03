@@ -14,9 +14,9 @@ class Solution {
                }
             }else{
                 if(target<=nums[e] && target>nums[mid]){
-                    e=mid-1;
-                }else{
                     s=mid+1;
+                }else{
+                    e=mid-1;
                 }
             }
         }
