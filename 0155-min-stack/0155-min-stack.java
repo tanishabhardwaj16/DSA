@@ -1,6 +1,6 @@
 class MinStack {
-            Stack<Integer> s=new Stack<>();
-            Stack<Integer> minS=new Stack<>();
+        Stack<Integer>s=new Stack<>();
+        Stack<Integer>minS=new Stack<>();
     public MinStack() {
 
     }
@@ -13,7 +13,7 @@ class MinStack {
     public void pop() {
         if(s.peek().equals(minS.peek())){
             minS.pop();
-        } 
+        }
         s.pop();
     }
     
