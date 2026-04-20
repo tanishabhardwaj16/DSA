@@ -29,7 +29,9 @@ class Solution {
                 if(x.right!=null) q.add(x.right);
             }
             ans.add(level);
-            Collections.reverse(ans);
+        }
+        for(int i=1;i<ans.size();i+=2){
+                Collections.reverse(ans.get(i));
         }
         return ans;     
     }
