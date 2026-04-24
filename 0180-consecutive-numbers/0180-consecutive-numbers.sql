@@ -1,7 +1,7 @@
 # Write your MySQL query statement below
 select distinct l.num as ConsecutiveNums
 from Logs l
-cross join Logs l1 
+join Logs l1 
 on l.id=l1.id-1
 join Logs l2 
 on l1.id=l2.id-1
