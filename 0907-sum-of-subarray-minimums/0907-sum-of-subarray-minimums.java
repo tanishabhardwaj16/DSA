@@ -3,13 +3,13 @@ class Solution {
         int n=arr.length;
         int mod=1000000007;
         Stack<Integer>s=new Stack<>();
-        int[] left=new int[n];
-        int[] right=new int[n];
+        int[] pse=new int[n];
+        int[] nse=new int[n];
         for(int i=0;i<n;i++){
             while(!s.isEmpty() && arr[s.peek()]>arr[i]){
                 s.pop();
             }
-            left[i]=s.isEmpty() ? i+1 : i-s.peek();
+            pse[i]=s.isEmpty() ? -1 : s.peek();
             s.push(i);
         }
         s.clear();
@@ -17,12 +17,14 @@ class Solution {
             while(!s.isEmpty() && arr[s.peek()]>=arr[i]){
                 s.pop();
             }
-            right[i]=s.isEmpty() ? n-i : s.peek()-i;
+            nse[i]=s.isEmpty() ? n : s.peek();
             s.push(i);
         }
         long sum=0;
         for(int i=0;i<n;i++){
-            long contri=(long)arr[i]*left[i]*right[i];
+            long left=i-pse[i];
+            long right=nse[i]-i;
+            long contri=(long)arr[i]*left*right;
             sum=(sum+contri)%mod;
         }
         return (int)sum;
