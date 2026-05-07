@@ -5,7 +5,6 @@ class Solution {
         int[] heights=new int[m];
         int maxarea=0;
         for(int i=0;i<n;i++){
-            int sum=0;
             for(int j=0;j<m;j++){
                 if(matrix[i][j]=='1'){
                     heights[j]+=1;
