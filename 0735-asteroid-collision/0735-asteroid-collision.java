@@ -8,7 +8,6 @@ class Solution {
             }else{
                 while(!s.isEmpty() && s.peek()>0 && s.peek()<-a){
                     s.pop();
-                   
                 }
                 if(s.isEmpty() || s.peek()<0){
                     s.push(a);
@@ -16,7 +15,7 @@ class Solution {
                 if(!s.isEmpty() && s.peek()==-a){
                     s.pop();
                 }
-            }          
+            }
         }
         int[] res=new int[s.size()];
         for(int i=s.size()-1;i>=0;i--){
