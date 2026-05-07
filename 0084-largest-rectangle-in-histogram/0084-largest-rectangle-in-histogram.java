@@ -8,7 +8,7 @@ class Solution {
             while(!s.isEmpty() && heights[s.peek()]>curr){
                 int ele=heights[s.pop()];
                 int nse=i;
-                int pse= s.isEmpty() ? -1 : s.peek();
+                int pse=s.isEmpty() ? -1 : s.peek();
                 int width=nse-pse-1;
                 maxarea=Math.max(ele*width,maxarea);
             }
