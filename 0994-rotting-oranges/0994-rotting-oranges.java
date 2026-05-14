@@ -13,28 +13,27 @@ class Solution {
                 }
             }
         }
-            if(fresh==0)return 0;
-
+        if(fresh==0) return 0;
         int minutes=-1;
-        int[][] dirs={{1,0},{-1,0},{0,1},{0,-1}};
+        int[][] dirs={{-1,0},{1,0},{0,1},{0,-1}};
         while(!q.isEmpty()){
             int size=q.size();
             minutes++;
             for(int k=0;k<size;k++){
-            int[] curr=q.poll();
-            int r=curr[0];
-            int c=curr[1];
-            for(int[] d:dirs){
-            int nr=r + d[0];
-            int nc=c + d[1];
-            if(nr>=0 && nr<m && nc>=0 && nc<n && grid[nr][nc]==1){
-                grid[nr][nc]=2;
-                fresh--;
-                q.add(new int[]{nr,nc});
-           }
-          }
+                int[] curr=q.poll();
+                int r=curr[0];
+                int c=curr[1];
+                for(int[] d : dirs){
+                    int nr=r + d[0];
+                    int nc=c + d[1];
+                    if(nr>=0 && nr<m && nc>=0 && nc<n && grid[nr][nc]==1){
+                        grid[nr][nc]=2;
+                        fresh--;
+                        q.add(new int[]{nr,nc});
+                    }
+               }
+            }
         }
-      }
-      return fresh==0 ? minutes:-1;
+        return fresh==0 ? minutes:-1;
     }
 }
