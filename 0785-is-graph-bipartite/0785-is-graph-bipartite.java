@@ -10,11 +10,11 @@ class Solution {
                 color[i]=0;
                 while(!q.isEmpty()){
                     int node=q.poll();
-                    for(int neigh:graph[node]){
-                        if(color[neigh]==-1){
-                            color[neigh]=1-color[node];
-                            q.add(neigh);
-                        }else if(color[neigh]==color[node]){
+                    for(int nei : graph[node]){
+                        if(color[nei]==-1){
+                            color[nei]=1-color[node];
+                            q.add(nei);
+                        }else if(color[nei]==color[node]){
                             return false;
                         }
                     }
