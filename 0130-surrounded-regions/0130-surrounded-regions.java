@@ -1,6 +1,6 @@
 class Solution {
     public void solve(char[][] board) {
-        if(board==null || board.length==0)return;
+        if(board==null || board.length==0) return;
         int m=board.length;
         int n=board[0].length;
         for(int i=0;i<m;i++){
@@ -23,11 +23,11 @@ class Solution {
         }
     }
     public void dfs(char[][] board,int i,int j,int m,int n){
-        if(i<0 || i>=m || j<0 || j>=n || board[i][j]!='O')return;
+        if(i<0 || i>=m || j<0 || j>=n || board[i][j]!='O') return;
         board[i][j]='#';
-        dfs(board,i-1,j,m,n);
         dfs(board,i+1,j,m,n);
-        dfs(board,i,j-1,m,n);
+        dfs(board,i-1,j,m,n);
         dfs(board,i,j+1,m,n);
+        dfs(board,i,j-1,m,n);
     }
 }
