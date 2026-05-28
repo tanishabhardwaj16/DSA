@@ -2,26 +2,22 @@ class Solution {
     public int characterReplacement(String s, int k) {
         int maxlen=0;
         for(char ch='A';ch<='Z';ch++){
-            maxlen=Math.max(maxlen,maxLength(s,k,ch));
+            maxlen=Math.max(maxlen,maxlength(s,k,ch));
         }
         return maxlen;
     }
-    private int maxLength(String s,int k,char target){
-        int start=0;
-        int e=0;
+    public int maxlength(String s,int k,int target){
         int maxlen=0;
+        int st=0;
+        int e=0;
         int rem=k;
         for(e=0;e<s.length();e++){
-            if(s.charAt(e)!=target){
-                rem--;
-            }
+            if(s.charAt(e)!=target) rem--;
             while(rem<0){
-                if(s.charAt(start)!=target){
-                    rem++;
-                }
-                start++;
+                if(s.charAt(st)!=target) rem++;
+                st++;
             }
-            maxlen=Math.max(maxlen,e-start+1);
+            maxlen=Math.max(maxlen,e-st+1);
         }
         return maxlen;
     }
