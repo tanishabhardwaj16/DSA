@@ -1,8 +1,8 @@
 class Solution {
     public int totalFruit(int[] fruits) {
-        Map<Integer,Integer> map=new HashMap<>();
-        int e=0;
+        Map<Integer,Integer>map=new HashMap<>();
         int s=0;
+        int e=0;
         int maxlen=0;
         for(e=0;e<fruits.length;e++){
             map.put(fruits[e],map.getOrDefault(fruits[e],0)+1);
