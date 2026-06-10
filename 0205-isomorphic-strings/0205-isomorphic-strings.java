@@ -1,8 +1,9 @@
 class Solution {
     public boolean isIsomorphic(String s, String t) {
-        HashMap<Character,Character> map=new HashMap<>();
-        int n=s.length() , m=t.length();
-        if(n != m) return false;
+        int n=s.length();
+        int m=t.length();
+        if(n!=m) return false;
+        HashMap<Character,Character>map=new HashMap<>();
         for(int i=0;i<n;i++){
             char schar=s.charAt(i);
             char tchar=t.charAt(i);
