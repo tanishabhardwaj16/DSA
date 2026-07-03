@@ -9,7 +9,7 @@ class Solution {
             if(!set.contains(num-1)){
                 int current=num;
                 int len=1;
-                while(current != Integer.MAX_VALUE && set.contains(current+1)){
+                while(set.contains(current+1)){
                 current++;
                 len++;
              }
