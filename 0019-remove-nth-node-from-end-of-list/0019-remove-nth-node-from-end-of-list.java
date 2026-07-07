@@ -20,7 +20,7 @@ class Solution {
             fast=fast.next;
             slow=slow.next;
         }
-        ListNode delete=slow.next;
+        // ListNode delete=slow.next;
         slow.next=slow.next.next;
         return head;
     }
